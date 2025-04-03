@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pomolearn - AI Powered Focus Learning</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Pomolearn</h1>
+
+        <div id="topic-input-area" class="input-section">
+            <label for="topic-input">Enter the topic you want to learn:</label>
+            <input type="text" id="topic-input" placeholder="e.g., Photosynthesis, JavaScript Promises">
+            <button id="start-learning-btn">Start Learning Session</button>
+             <div id="loading-indicator" class="hidden">Generating learning content... Please wait.</div>
+             <div id="error-message" class="error hidden"></div>
+        </div>
+
+        <div id="learning-area" class="hidden">
+            <h2 id="current-topic"></h2>
+             <div id="timer-display">25:00</div>
+             <div id="cycle-info">Cycle 1/4 - Work Time</div>
+             <div class="timer-controls">
+                 <button id="start-pause-btn">Start</button>
+                 <button id="reset-btn">Reset Session</button>
+                 <button id="skip-to-break-btn" class="skip-btn hidden">Finish Cycle & Start Break</button>
+                 <button id="skip-break-btn" class="skip-btn hidden">Skip Break & Start Next Cycle</button>
+                 </div>
+
+             <div id="content-display" class="content-box">
+                 <p>Click "Start" to begin Cycle 1.</p>
+             </div>
+        </div>
+
+        <div id="quiz-area" class="hidden">
+            <h2>Quiz Time!</h2>
+             <p>Test your knowledge based on the material covered.</p>
+             <div id="quiz-loading" class="hidden">Generating quiz... Please wait.</div>
+             <div id="quiz-error" class="error hidden"></div>
+             <form id="quiz-form">
+                 </form>
+             <button id="submit-quiz-btn" class="hidden">Submit Answers</button>
+        </div>
+
+        <div id="results-area" class="hidden">
+            <h2>Quiz Results</h2>
+            <p id="score-display">Your Score: X / Y</p>
+            <div id="results-details">
+                </div>
+             <button id="restart-learning-btn">Learn Another Topic</button>
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
