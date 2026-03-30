@@ -35,12 +35,14 @@ Pomolearn is an AI-powered study companion that combines the **Pomodoro Techniqu
 ## ⚙️ Installation & Setup
 
 1. **Clone the repository**:
+
    ```bash
    git clone <repository-url>
    cd pomolearn-new/pomolearn
    ```
 
 2. **Install dependencies**:
+
    ```bash
    npm install
    ```
@@ -57,6 +59,7 @@ Pomolearn is an AI-powered study companion that combines the **Pomodoro Techniqu
 ## 🏃 How to Run
 
 1. **Start the server**:
+
    ```bash
    node server.js
    ```
@@ -73,9 +76,3 @@ Pomolearn is an AI-powered study companion that combines the **Pomodoro Techniqu
 
 - `POST /api/generate-content`: Generates 4 cycles of study material for a given `topic`.
 - `POST /api/generate-quiz`: Generates 25 MCQs based on the provided `content` array.
-
----
-
-## 👨‍💻 Author
-
-Developed with ❤️ for efficient learning.
