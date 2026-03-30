@@ -1,4 +1,4 @@
-# Pomolearn 🍅📚
+# Pomolearn
 
 This directory contains the main source code for the Pomolearn application. For more information, please check the [README](../../README.md) file at the project root.
 
