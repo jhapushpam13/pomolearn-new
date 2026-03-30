@@ -1,4 +1,4 @@
-# Pomolearn 🍅📚
+# Pomolearn
 
 Pomolearn is an AI-powered study companion that combines the **Pomodoro Technique** with dynamic learning material generation. It helps users learn complex topics by breaking them down into digestible 25-minute study cycles, complete with comprehensive notes and a final assessment quiz.
 
