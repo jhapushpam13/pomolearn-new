@@ -1,34 +1,43 @@
 # Pomolearn
 
-Pomolearn is an AI-powered study companion that combines the **Pomodoro Technique** with dynamic learning material generation. It helps users learn complex topics by breaking them down into digestible 25-minute study cycles, complete with comprehensive notes and a final assessment quiz.
+Pomolearn is an AI-powered study companion that combines the **Pomodoro Technique** with dynamic learning material generation. It helps users master any topic by breaking it down into focused, high-retainment study cycles, complete with comprehensive notes and adaptive quizzes.
 
 ---
 
 ## 🚀 Features
 
-- **Dynamic Content Generation**: Uses Google's **Gemini 2.5 Flash** to generate structured study material for any topic.
-- **Pomodoro-Optimized**: Automatically breaks down your learning into **4 distinct 25-minute cycles**, each progressing logically from the previous one.
-- **Comprehensive Notes**: Each cycle provides approximately 1000-1500 words of pointers and explanations.
-- **Interactive Quiz**: After completing the study cycles, users can take a **25-question MCQ quiz** generated specifically from the learned material to test their understanding.
-- **Clean Interface**: A simple, focused frontend for an uninterrupted learning experience.
+- **AI-Powered Learning Paths**: Dynamically generates structured study material for any topic using **Google Gemini**.
+- **Customizable Sessions**: Fully configurable session parameters:
+  - **Cycles**: 1 to 8 learning cycles.
+  - **Duration**: Adjustable work (15-50min) and break (3-15min) times.
+  - **Quizzes**: Tailored MCQ counts (5-40 questions) based on your session content.
+- **Premium Animated UI**: A modern, glassmorphism-inspired interface built with **Framer Motion**.
+- **Dark/Light Mode**: Full theme support with persistent preferences.
+- **Custom AI Settings**:
+  - **Rate Limiting**: Free tier includes 2 sessions per IP/day.
+  - **Custom API Key**: Connect your own Gemini API key to bypass all limits.
+  - **Model Selection**: Choose between various Gemini models (Flash, Pro, Lite).
+- **Responsive Design**: Optimized for both desktop and mobile focused learning.
 
 ---
 
 ## 🛠️ Technology Stack
 
-- **Backend**: Node.js, Express.js
-- **AI Engine**: Google Generative AI (`@google/generative-ai`)
-- **Model**: `gemini-2.5-flash`
-- **Frontend**: Vanilla HTML5, CSS3, JavaScript
-- **Environment**: Dotenv for secure API key management
+- **Framework**: [Next.js 15](https://nextjs.org/) (App Router)
+- **Styling**: [Tailwind CSS v4](https://tailwindcss.com/)
+- **Animations**: [Framer Motion](https://www.framer.com/motion/)
+- **State Management**: [Zustand](https://zustand-demo.pmnd.rs/)
+- **AI Engine**: Google Generative AI ([Gemini 2.0 Flash](https://aistudio.google.com/))
+- **Icons**: Lucide React
+- **Markdown**: react-markdown + remark-gfm
 
 ---
 
 ## 📋 Prerequisites
 
-- **Node.js** (v18+ recommended)
-- **npm** (Node Package Manager)
-- **Google Gemini API Key**: You can obtain one from the [Google AI Studio](https://aistudio.google.com/).
+- **Node.js** (v18.17.0 or later)
+- **npm** or **yarn**
+- **Google Gemini API Key**: [Get one for free here](https://aistudio.google.com/)
 
 ---
 
@@ -48,31 +57,40 @@ Pomolearn is an AI-powered study companion that combines the **Pomodoro Techniqu
    ```
 
 3. **Configure Environment Variables**:
-   Create a `.env` file in the `pomolearn` directory (you can use `.env.example` as a template):
+   Create a `.env.local` file in the `pomolearn` directory:
    ```env
-   GEMINI_API_KEY=YOUR_GOOGLE_GEMINI_API_KEY_HERE
-   PORT=3000
+   GEMINI_API_KEY=your_api_key_here
    ```
 
 ---
 
 ## 🏃 How to Run
 
-1. **Start the server**:
+1. **Start the development server**:
 
    ```bash
-   node server.js
+   npm run dev
    ```
 
 2. **Open the application**:
-   Navigate to `http://localhost:3000` in your web browser.
+   Navigate to [http://localhost:3000](http://localhost:3000) in your browser.
 
 3. **Start Learning**:
-   Enter a topic you want to learn, and let Pomolearn guide you through the cycles!
+   Enter a topic, adjust your session settings, and click **Start Learning Session**.
 
 ---
 
-## 🧩 API Endpoints
+## 🧩 Architecture
 
-- `POST /api/generate-content`: Generates 4 cycles of study material for a given `topic`.
-- `POST /api/generate-quiz`: Generates 25 MCQs based on the provided `content` array.
+- **`src/app`**: Next.js App Router pages and API routes.
+- **`src/components`**: Reusable UI components (Timer, Settings, Hero, etc.).
+- **`src/hooks`**: Custom hooks for core logic (`usePomodoroTimer`).
+- **`src/store`**: Zustand stores for global application state.
+- **`src/lib`**: Utility functions, AI clients, and rate limiting logic.
+
+---
+
+## 🔒 Rate Limiting & Privacy
+
+- **Free Tier**: The application includes a built-in rate limiter (2 requests per IP every 24 hours) to manage server costs while using the default API key.
+- **Custom Keys**: Users can provide their own API key in the **Settings** panel (bottom-left). Custom keys are stored only in your browser's `localStorage` and are never saved to our servers.
