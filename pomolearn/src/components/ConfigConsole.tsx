@@ -210,8 +210,9 @@ export function ConfigConsole({ onStart, isLoading }: ConfigConsoleProps) {
         disabled={isLoading}
         className="w-full py-4 rounded-2xl text-white font-heading font-bold text-lg flex items-center justify-center gap-3 transition-all duration-300 cursor-pointer disabled:opacity-60 disabled:cursor-not-allowed"
         style={{
-          background: isLoading
-            ? "var(--color-surface-500)"
+          backgroundColor: isLoading ? "var(--color-surface-500)" : "transparent",
+          backgroundImage: isLoading
+            ? "none"
             : "linear-gradient(135deg, var(--color-primary-600), var(--color-primary-500), var(--color-accent-500))",
           backgroundSize: "200% 200%",
           boxShadow: isLoading ? "none" : "var(--shadow-glow)",
