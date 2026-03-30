@@ -47,7 +47,7 @@ Pomolearn is an AI-powered study companion that combines the **Pomodoro Techniqu
 
    ```bash
    git clone <repository-url>
-   cd pomolearn-new/pomolearn
+   cd pomolearn-new
    ```
 
 2. **Install dependencies**:
@@ -57,7 +57,7 @@ Pomolearn is an AI-powered study companion that combines the **Pomodoro Techniqu
    ```
 
 3. **Configure Environment Variables**:
-   Create a `.env.local` file in the `pomolearn` directory:
+   Create a `.env.local` file in the root directory:
    ```env
    GEMINI_API_KEY=your_api_key_here
    ```
