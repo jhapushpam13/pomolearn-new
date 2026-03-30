@@ -19,7 +19,7 @@ if (!apiKey) {
     process.exit(1); // Exit if API key is missing
 }
 const genAI = new GoogleGenerativeAI(apiKey);
-const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" }); // Or another suitable model
+const model = genAI.getGenerativeModel({ model: "gemini-2.5-flash" }); // Or another suitable model
 
 // --- API Endpoints ---
 
